@@ -60,19 +60,9 @@ extension UIImageView {
             completion()
         }
     }
-}
-
-extension UITableViewCell {
-    func setImage(imageView:UIImageView, urlSting:String) {
-        imageView.loadThumbnail(urlSting: urlSting, completion: {
-            self.setNeedsLayout()
-        })
-    }
-}
-
-extension UICollectionViewCell {
-    func setImage(imageView:UIImageView, urlSting:String) {
-        imageView.loadThumbnail(urlSting: urlSting, completion: {
+    
+    func setImage(urlSting:String) {
+        loadThumbnail(urlSting: urlSting, completion: {
             self.setNeedsLayout()
         })
     }

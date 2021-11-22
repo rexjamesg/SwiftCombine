@@ -1,5 +1,5 @@
 //
-//  APIRequestModel.swift
+//  RandomUserRoute.swift
 //  SwiftCombine
 //
 //  Created by Rex Lin on 2021/10/8.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum APIRequestModel {
+enum RandomUserRoute {
     case randomUser
     case randomUserList(page:Int, result:Int=10)
 }
 
-extension APIRequestModel: APIProtocol {
+extension RandomUserRoute: APIProtocol {
     var domain: String {
         return "https://randomuser.me"
     }
@@ -27,10 +27,10 @@ extension APIRequestModel: APIProtocol {
     var path: String {
         switch self {
         case .randomUser:
-            return "/api/"
+            return "/api"
             
         case .randomUserList:
-            return "/api/"
+            return "/api"
         }
     }
     
@@ -51,6 +51,4 @@ extension APIRequestModel: APIProtocol {
     var commonParameter: [String : Any]? {
         return nil
     }
-    
-    
 }
