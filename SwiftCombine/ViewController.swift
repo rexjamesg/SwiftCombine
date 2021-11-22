@@ -19,8 +19,7 @@ class ViewController: UIViewController {
 
     private var subscribers:[AnyCancellable] = []
     
-    @Published
-    private var list = [RandomUser]()
+    private var viewModel:RandomUserViewModel = RandomUserViewModel.init()
     
     private var tableView:UITableView = {
         let tableView = UITableView()
@@ -39,27 +38,19 @@ class ViewController: UIViewController {
         tableView.delegate = self
         
         initBinding()
+        
+        viewModel.getUserList { error in
+            if let error = error {
+                self.presentAlart(error: error)
+            }
+        }
     }
     
     private func initBinding() {
-        $list.receive(on: DispatchQueue.main)
+        viewModel.$list.receive(on: DispatchQueue.main)
             .sink { value in
                 self.tableView.reloadData()
         }.store(in: &subscribers)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        DataHandler.shared.getAPI(apiDataModel: .randomUserList(page: 1, result: 100), dataType: RandmoUserList.self) { result in
-            switch result {
-            case .success(let data):
-                self.list += data.results
-                break
-            case .failure(let error):
-                print("error",error)
-                break
-            }
-        }
     }
     
     func presentAlart(error:String) {
@@ -80,7 +71,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return viewModel.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,9 +79,8 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserCell else {
             fatalError()
         }
-                        
-        if list.count > indexPath.row {
-            let randomUser = list[indexPath.row]
+               
+        if let randomUser = viewModel.getRandomUser(index: indexPath.row) {
             cell.setData(randomUser: randomUser)
         }
         

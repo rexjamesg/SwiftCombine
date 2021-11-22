@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */; };
 		D2A09A072715321800C9AD2A /* ImageDownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */; };
 		D2AA5A90270FF26B00D9E059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA5A8F270FF26B00D9E059 /* AppDelegate.swift */; };
 		D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA5A91270FF26B00D9E059 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModel.swift; sourceTree = "<group>"; };
 		D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadHandler.swift; sourceTree = "<group>"; };
 		D2AA5A8C270FF26B00D9E059 /* SwiftCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AA5A8F270FF26B00D9E059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D29EF552274B996C009AFA0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D2AA5A83270FF26B00D9E059 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		D2AA5A8E270FF26B00D9E059 /* SwiftCombine */ = {
 			isa = PBXGroup;
 			children = (
+				D29EF552274B996C009AFA0D /* ViewModel */,
 				D2AA5AD32710499E00D9E059 /* View */,
 				D2AA5ACA27103A7B00D9E059 /* Model */,
 				D2AA5ABF270FF2BC00D9E059 /* Helper */,
@@ -314,6 +325,7 @@
 				D2AA5AC1270FF2DD00D9E059 /* URLTaskPublisher.swift in Sources */,
 				D2AA5A90270FF26B00D9E059 /* AppDelegate.swift in Sources */,
 				D2AA5AD2271041FB00D9E059 /* APIRequestModel.swift in Sources */,
+				D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */,
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				D2AA5AD6271049BE00D9E059 /* UserCell.swift in Sources */,
 				D2AA5AC3270FF51900D9E059 /* DataHandler.swift in Sources */,
