@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */; };
+		D29EF556274B9E8D009AFA0D /* Repositery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EF555274B9E8D009AFA0D /* Repositery.swift */; };
 		D2A09A072715321800C9AD2A /* ImageDownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */; };
 		D2AA5A90270FF26B00D9E059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA5A8F270FF26B00D9E059 /* AppDelegate.swift */; };
 		D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AA5A91270FF26B00D9E059 /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModel.swift; sourceTree = "<group>"; };
+		D29EF555274B9E8D009AFA0D /* Repositery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositery.swift; sourceTree = "<group>"; };
 		D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadHandler.swift; sourceTree = "<group>"; };
 		D2AA5A8C270FF26B00D9E059 /* SwiftCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AA5A8F270FF26B00D9E059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				D2AA5ACF2710400900D9E059 /* URLTaskDefinition.swift */,
 				D2AA5ACD27103BFE00D9E059 /* RandomUser.swift */,
 				D2AA5AD1271041FB00D9E059 /* APIRequestModel.swift */,
+				D29EF555274B9E8D009AFA0D /* Repositery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AA5ACE27103BFE00D9E059 /* RandomUser.swift in Sources */,
+				D29EF556274B9E8D009AFA0D /* Repositery.swift in Sources */,
 				D2A09A072715321800C9AD2A /* ImageDownloadHandler.swift in Sources */,
 				D2AA5A94270FF26B00D9E059 /* ViewController.swift in Sources */,
 				D2AA5AD02710400900D9E059 /* URLTaskDefinition.swift in Sources */,

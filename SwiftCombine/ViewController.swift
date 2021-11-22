@@ -8,13 +8,6 @@
 import UIKit
 import Combine
 
-struct Repositery: Codable {
-    var id: Int
-    var node_id: String
-    var name: String
-    var full_name: String
-}
-
 class ViewController: UIViewController {
 
     private var subscribers:[AnyCancellable] = []
