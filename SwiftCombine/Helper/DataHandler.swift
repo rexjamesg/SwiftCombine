@@ -24,14 +24,15 @@ final class DataHandler: NSObject {
             .decode(type: T.self, decoder: JSONDecoder())
             .retry(3)
             .sink { completion in
-            switch completion {
-            case .finished:
-                break
+            
+                switch completion {
+                case .finished:
+                    break
                 
-            case .failure(let error):
-                completionHandler(.failure(error))
-                break
-            }
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                    break
+                }
         } receiveValue: { value in
             completionHandler(.success(value))
         }.store(in: &subscribers)

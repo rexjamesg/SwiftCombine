@@ -18,8 +18,10 @@ class URLTaskPublisher: NSObject {
         return Deferred {
             Future { [self] promise in
                 do {
+                    
+                    //建立請求
                     let request = try buildRequest(api: apiDataModel)
-                    print("request",request)
+                                        
                     let task = URLSession.shared.dataTask(with: request) { data, response, error in
                         guard let data = data else {
                             if let error = error {
