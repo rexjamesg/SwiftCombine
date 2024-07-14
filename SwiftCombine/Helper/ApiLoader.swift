@@ -1,5 +1,5 @@
 //
-//  URLTaskPublisher.swift
+//  ApiLoader.swift
 //  SwiftCombine
 //
 //  Created by Rex Lin on 2021/10/8.
@@ -8,35 +8,59 @@
 import UIKit
 import Combine
 
-class URLTaskPublisher: NSObject {
-    
-    override init() {
-        super.init()
+typealias SingleResult<T:Codable> = AnyPublisher<Result<T, APPError>, Never>
+
+class ApiLoader: NSObject {
+    func getAPI<T: Codable>(api:RandomUserRoute, type:T.Type, retryTimes:Int=0) -> SingleResult<T> {
+        return request(api: api)
+            .decode(type: T.self, decoder: JSONDecoder())
+            .retry(retryTimes)
+            .map { Result.success($0) }
+            .catch { error in
+                if let error = error as? APPError {
+                    return Just(Result<T, APPError>.failure(error))
+                }
+
+                return Just(Result.failure(APPError.networkError(error: .unableToDecode)))
+            }.eraseToAnyPublisher()
     }
     
-    public func request<T:APIProtocol>(apiDataModel:T) -> Deferred<Future<Data,Error>> {
-        return Deferred {
-            Future { [self] promise in
-                do {
-                    
-                    //建立請求
-                    let request = try buildRequest(api: apiDataModel)
-                                        
-                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                        guard let data = data else {
-                            if let error = error {
-                                promise(.failure(error))
-                            }
-                            return
-                        }
-                        
-                        promise(.success(data))
+    func request(api: APIProtocol) -> AnyPublisher<Data, APPError> {
+        do {
+            let request = try buildRequest(api: api)
+
+            return URLSession.shared.dataTaskPublisher(for: request)
+                .tryMap { data, response in
+
+                    guard let response = response as? HTTPURLResponse else {
+                        throw APPError.networkError(error: .noResponse)
                     }
-                    task.resume()
-                } catch {
-                    promise(.failure(error))
+
+                    #if DEBUG
+                        let json = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                        print("json", json)
+                    #endif
+
+                    if response.statusCode != 200 {
+                        throw APPError.statusCodeError(statusCode: response.statusCode)
+                    }
+
+                    return data
                 }
+                .catch { error -> AnyPublisher<Data, APPError> in
+
+                    if let error = error as? APPError {
+                        return AnyPublisher(Fail(error: error))
+                    }
+
+                    return AnyPublisher(Fail(error: .networkError(error: .customError(error: error.localizedDescription))))
+                }
+                .eraseToAnyPublisher()
+        } catch {
+            if let error = error as? APPError {
+                return AnyPublisher(Fail(error: error))
             }
+            return AnyPublisher(Fail(error: APPError.networkError(error: .missingURL)))
         }
     }
     
@@ -46,7 +70,7 @@ class URLTaskPublisher: NSObject {
     */
     private func buildRequest<T:APIProtocol>(api: T) throws -> URLRequest {
         
-        var request = URLRequest.init(url: api.url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+        var request = URLRequest.init(url: api.url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30.0)
         request.httpMethod = api.httpMethod.rawValue
                        
         switch api.task {
@@ -144,7 +168,7 @@ class URLTaskPublisher: NSObject {
             urlRequest.httpBody = jsonData
             
         } catch {
-            throw NetworkError.encodeFail
+            throw APPError.networkError(error: .encodeFail)
         }
     }
     
@@ -176,7 +200,7 @@ class URLTaskPublisher: NSObject {
      - Parameter parameters: 參數
      */
     private func urlParameterEncode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
-        guard let url = urlRequest.url else { throw NetworkError.missingURL }
+        guard let url = urlRequest.url else { throw APPError.networkError(error: .missingURL) }
         if var urlComponents = URLComponents.init(url: url, resolvingAgainstBaseURL: false), !parameters.isEmpty {
             var queryItems:[URLQueryItem] = []
             for (key,value) in parameters {

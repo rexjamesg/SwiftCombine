@@ -25,10 +25,9 @@ class UserCell: UITableViewCell {
         let first = randomUser.name.first
         let last = randomUser.name.last
         let picture = randomUser.picture.medium
-        
-        
+                
         label.text = "\(title). \(first) \(last)"
-        setImage(imageView: userImage, urlSting: picture)
+        userImage.setImage(urlSting: picture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
