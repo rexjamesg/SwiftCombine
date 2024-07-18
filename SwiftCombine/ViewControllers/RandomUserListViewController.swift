@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SwiftUI
 
-class RandomUserListViewController: UIViewController {
+class RandomUserListViewController: BaseViewController {
 
     //MARK: - Private Properties
     private let contentView = RandomUserListView()
@@ -42,6 +42,9 @@ class RandomUserListViewController: UIViewController {
 //MARK: - Private Methods
 private extension RandomUserListViewController {
     func setupViews() {
+
+        setNavigationBarstyle(title: "Random User", titleColor: .white, backgroundColor: UIColor(named: "#0088CC"))
+
         view.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -52,7 +55,6 @@ private extension RandomUserListViewController {
         ])
         
         setIndicator()
-
         contentView.tableView.delegate = self
         contentView.refreshControl.addTarget(self, action: #selector(refreshAction(sender:)), for: .valueChanged)
     }
@@ -145,9 +147,7 @@ extension RandomUserListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if !viewModel.isLoading && indexPath.row == viewModel.randomUsers.count-1 {
-            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-                self.loadData()
-            }
+            loadData()
             circleIndicator?.view.isHidden = false
         }
     }
@@ -181,22 +181,6 @@ extension RandomUserListViewController: UITableViewDelegate {
                     guard let self = self else { return }
                     self.presentUserDetailView(userData: data)
                 }
-            }
-        }
-    }
-}
-
-extension UIView {
-    func tapScaleAnmation(finished: (()->Void)?=nil) {
-        UIView.animate(withDuration: 0.15) { [weak self] in
-            guard let self = self else { return }
-            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.15) { [weak self] in
-                guard let self = self else { return }
-                self.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            } completion: { _ in
-                finished?()
             }
         }
     }
