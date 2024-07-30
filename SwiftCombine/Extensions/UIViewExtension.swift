@@ -9,17 +9,19 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func tapScaleAnmation(finished: (()->Void)?=nil) {
-        UIView.animate(withDuration: 0.15) { [weak self] in
+    func tapScaleAnimation(duration: TimeInterval = 0.15, scale: CGFloat = 1.2, completion: (() -> Void)? = nil) {
+        animateScale(to: scale, duration: duration) { [weak self] in
             guard let self = self else { return }
-            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.15) { [weak self] in
-                guard let self = self else { return }
-                self.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            } completion: { _ in
-                finished?()
-            }
+            self.animateScale(to: 1.0, duration: duration, completion: completion)
         }
+    }
+
+    private func animateScale(to scale: CGFloat, duration: TimeInterval, completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: duration, animations: { [weak self] in
+            guard let self = self else { return }
+            self.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }, completion: { _ in
+            completion?()
+        })
     }
 }

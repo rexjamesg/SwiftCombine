@@ -7,26 +7,28 @@
 
 import Foundation
 
-struct UserInfo:Codable {
-    let seed: String
-    let results: Int
-    let page: Int
-    let version: String
+// MARK: - UserInfo
+
+struct UserInfo: Codable, Hashable {
+    let seed: String?
+    let results: Int?
+    let page: Int?
+    let version: String?
 }
 
-extension UserInfo: Hashable, Equatable {
-    static func == (lhs: UserInfo, rhs: UserInfo) -> Bool {
-        return lhs.seed == rhs.seed &&
-        lhs.results == rhs.results &&
-        lhs.page == rhs.page &&
-        lhs.version == rhs.version
-        
+extension UserInfo {
+    enum CodingKeys: String, CodingKey {
+        case seed
+        case results
+        case page
+        case version
     }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(seed)
-        hasher.combine(results)
-        hasher.combine(page)
-        hasher.combine(version)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        seed = try container.decodeIfPresent(String.self, forKey: .seed)
+        results = try container.decodeIfPresent(Int.self, forKey: .results)
+        page = try container.decodeIfPresent(Int.self, forKey: .page)
+        version = try container.decodeIfPresent(String.self, forKey: .version)
     }
 }

@@ -12,9 +12,8 @@ import Foundation
 enum APPError: Error {
     case networkError(error: NetworkError)
     case statusCodeError(statusCode: Int)
-    //case apiError(errorCode: Int)
+    case apiError(error: APIError)
     case noSelf
-    case receivedEmptyData
 
     // 伺服器連線錯誤
     enum StatusCodeError: Error {
@@ -39,12 +38,13 @@ enum APPError: Error {
     }
 
     // API端錯誤
-//    enum APIError: Error {
-//        case loginFail
-//        case invalidToken
-//        case notAuthorized
-//        case unownedError
-//    }
+    enum APIError: Error {
+        case loginFail
+        case emptyList
+        case invalidToken
+        case notAuthorized
+        case unownedError
+    }
 }
 
 extension APPError {
@@ -54,12 +54,10 @@ extension APPError {
             return APPError.getNetworkErrorDescription(error: error)
         case let .statusCodeError(statusCode):
             return APPError.getStatusCodeErrorDescription(statusCode: statusCode)
+        case let .apiError(error):
+            return APPError.getApiErrorDescription(error: error)
         case .noSelf:
-            return "物件不存在"        
-        case .receivedEmptyData:
-            return "空的Api資料"
-//        case let .apiError(errorCode):
-//            return APPError.getApiErrorDescription(errorCode: errorCode)
+            return "物件不存在"
         }
     }
 
@@ -91,37 +89,35 @@ extension APPError {
         let errorMsg = "\(statusCode) "
         switch error {
         case .authenticationError:
-            return errorMsg+"驗證錯誤"
+            return errorMsg + "驗證錯誤"
         case .badRequest:
-            return errorMsg+"錯誤的請求"
+            return errorMsg + "錯誤的請求"
         case .outdated:
-            return errorMsg+"請求已過期"
+            return errorMsg + "請求已過期"
         case .failed:
-            return errorMsg+"讀取失敗"
+            return errorMsg + "讀取失敗"
         case .serverError:
-            return errorMsg+"伺服器連線錯誤"
+            return errorMsg + "伺服器連線錯誤"
         case .unknowned:
-            return errorMsg+"未知的錯誤"
+            return errorMsg + "未知的錯誤"
         }
     }
 
-    // API錯誤(回傳200,但有錯誤碼)
-//    static func getApiErrorDescription(errorCode: Int) -> String? {
-//        guard let error = handleApiError(errorCode: errorCode) else {
-//            return nil
-//        }
-//
-//        switch error {
-//        case .loginFail:
-//            return "登入失敗"
-//        case .invalidToken:
-//            return "無效的令牌"
-//        case .notAuthorized:
-//            return "尚未授權"
-//        case .unownedError:
-//            return "未知的API錯誤"
-//        }
-//    }
+    // API錯誤
+    static func getApiErrorDescription(error: APIError) -> String? {
+        switch error {
+        case .loginFail:
+            return "登入失敗"
+        case .invalidToken:
+            return "無效的令牌"
+        case .notAuthorized:
+            return "尚未授權"
+        case .emptyList:
+            return ""
+        case .unownedError:
+            return "未知的API錯誤"
+        }
+    }
 
     // 處理API回傳的錯誤碼
 //    static func handleApiError(errorCode: Int) -> APIError? {

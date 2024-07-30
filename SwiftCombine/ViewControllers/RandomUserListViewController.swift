@@ -5,44 +5,49 @@
 //  Created by Rex Lin on 2021/10/8.
 //
 
-import UIKit
 import Combine
 import SwiftUI
+import UIKit
+
+// MARK: - RandomUserListViewController
 
 class RandomUserListViewController: BaseViewController {
+    // MARK: - Private Properties
 
-    //MARK: - Private Properties
+
+    private let collection = UIView()
+
     private let contentView = RandomUserListView()
     private var viewModel = RandomUserViewModel()
-    private var detailView:UserDetailView?
-    private var subscribers:[AnyCancellable] = []
+    private var detailView: UserDetailView?
+    private var subscribers: [AnyCancellable] = []
     private let footerHeight = 50.0
 
-    //MARK: - SwiftUI
-    private var circleIndicator:UIHostingController<CircleIndicator>?
+    // MARK: - SwiftUI
 
-    
+    private var circleIndicator: UIHostingController<CircleIndicator>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-                
+
         setupViews()
         setDetailView()
         bind()
         loadData()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let detailView = self.detailView {
+
+    override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
+        if let detailView = detailView {
             detailView.isHidden = true
         }
     }
 }
 
-//MARK: - Private Methods
+// MARK: - Private Methods
+
 private extension RandomUserListViewController {
     func setupViews() {
-
         setNavigationBarstyle(title: "Random User", titleColor: .white, backgroundColor: UIColor(named: "#0088CC"))
 
         view.addSubview(contentView)
@@ -53,7 +58,7 @@ private extension RandomUserListViewController {
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
+
         setIndicator()
         contentView.tableView.delegate = self
         contentView.refreshControl.addTarget(self, action: #selector(refreshAction(sender:)), for: .valueChanged)
@@ -61,7 +66,7 @@ private extension RandomUserListViewController {
 
     func setDetailView() {
         detailView = UserDetailView()
-        guard let detailView = self.detailView else { return }
+        guard let detailView = detailView else { return }
         view.addSubview(detailView)
         detailView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -79,7 +84,7 @@ private extension RandomUserListViewController {
         if let vc = circleIndicator {
             vc.view.translatesAutoresizingMaskIntoConstraints = false
             addChild(vc)
-            //要在addSubview之後做，否則找不到view的constraint，會crash
+            // 要在addSubview之後做，否則找不到view的constraint，會crash
             vc.view.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             vc.view.backgroundColor = .clear
             vc.didMove(toParent: self)
@@ -90,42 +95,53 @@ private extension RandomUserListViewController {
         detailView?.isHidden = false
         detailView?.setData(userData: userData)
     }
-    
+
     func loadData() {
         viewModel.input.load.send(viewModel.currentPage)
     }
-    
-    func updateSnapShot(items:[RandomUser]) {
+
+    func updateSnapShot(items: [RandomUser]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, RandomUser>()
         snapshot.appendSections([0])
-        
+
         items.forEach {
             snapshot.appendItems([$0], toSection: 0)
         }
         
         viewModel.tableViewDiffableDataSource?.apply(snapshot, animatingDifferences: false)
     }
-    
+
     @objc func refreshAction(sender: UIRefreshControl) {
         sender.beginRefreshing()
         viewModel.input.refteshData.send(())
     }
 }
 
-//MARK: - Bind
+// MARK: - Bind
+
 private extension RandomUserListViewController {
     func bind() {
-        viewModel.tableViewDiffableDataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: {  tableView, indexPath, item in
+        viewModel.tableViewDiffableDataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, item in
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(UserCell.self)", for: indexPath)
-            
             if let cell = cell as? UserCell {
                 cell.setData(randomUser: item)
+                cell.locationButton.publisher(for: .touchUpInside)
+                    .sink { _ in
+                        guard let latitude = item.location?.coordinates?.latitude,
+                              let longitude = item.location?.coordinates?.longitude else {
+                            return
+                        }
+
+                        if let latitude = Double(latitude), let longitude = Double(longitude) {
+                            MapHelper.showLocaiton(latitude: latitude, longitude: longitude, name: item.location?.city ?? "")
+                        }
+                    }.store(in: &cell.subscribers)
             }
-                               
+
             return cell
         })
-        
+
         viewModel.output.didReceiveList
             .receive(on: DispatchQueue.main)
             .sink { [weak self] list in
@@ -135,54 +151,54 @@ private extension RandomUserListViewController {
                 if self.contentView.refreshControl.isRefreshing {
                     self.contentView.refreshControl.endRefreshing()
                 }
-        }.store(in: &subscribers)
+            }.store(in: &subscribers)
     }
 }
 
+// MARK: UITableViewDelegate
+
 extension RandomUserListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 70
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !viewModel.isLoading && indexPath.row == viewModel.randomUsers.count-1 {
+
+    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !viewModel.isLoading && indexPath.row == viewModel.randomUsers.count - 1 {
             loadData()
             circleIndicator?.view.isHidden = false
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
         return .leastNonzeroMagnitude
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_: UITableView, heightForFooterInSection _: Int) -> CGFloat {
         return footerHeight
     }
 
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection _: Int) -> UIView? {
         let footerSize = CGSize(width: tableView.frame.width, height: footerHeight)
         let footerView = UIView(frame: CGRect(origin: tableView.bounds.origin, size: footerSize))
 
         if let indicator = circleIndicator?.view {
             footerView.addSubview(indicator)
             indicator.center.x = footerView.center.x
-            indicator.frame.origin.y = footerView.frame.height/2-indicator.frame.height/2
+            indicator.frame.origin.y = footerView.frame.height / 2 - indicator.frame.height / 2
         }
         return footerView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         if let data = viewModel.randomUsers[safe: indexPath.row] {
             if let cell = tableView.cellForRow(at: indexPath) {
-                cell.tapScaleAnmation { [weak self] in
-                    guard let self = self else { return }
-                    self.presentUserDetailView(userData: data)
+                cell.tapScaleAnimation {
+                    [weak self] in
+                        guard let self = self else { return }
+                        self.presentUserDetailView(userData: data)
                 }
             }
         }
     }
 }
-

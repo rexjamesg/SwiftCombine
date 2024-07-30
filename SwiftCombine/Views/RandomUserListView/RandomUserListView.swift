@@ -7,15 +7,18 @@
 
 import UIKit
 
+// MARK: - RandomUserListView
+
 class RandomUserListView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var tableView: UITableView! {
         didSet {
-            let nib = UINib.init(nibName: "\(UserCell.self)", bundle: nil)
+            let nib = UINib(nibName: "\(UserCell.self)", bundle: nil)
             tableView.register(nib, forCellReuseIdentifier: "\(UserCell.self)")
-            tableView.refreshControl = refreshControl            
+            tableView.refreshControl = refreshControl
         }
     }
+    
     let refreshControl = UIRefreshControl()
 
     required init?(coder: NSCoder) {
@@ -29,23 +32,24 @@ class RandomUserListView: UIView {
     }
 
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+         // Drawing code
+     }
+     */
 }
 
-//MARK: - Private Properties
-//MARK: - Private Methods
+// MARK: - Private Properties
+
+// MARK: - Private Methods
+
 private extension RandomUserListView {
     func commonInit() {
         translatesAutoresizingMaskIntoConstraints = false
         Bundle(for: RandomUserListView.self).loadNibNamed("\(RandomUserListView.self)",
-                                                 owner: self,
-                                                 options: nil)
+                                                          owner: self,
+                                                          options: nil)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(contentView)

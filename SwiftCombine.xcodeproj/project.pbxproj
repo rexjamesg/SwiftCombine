@@ -27,6 +27,8 @@
 		51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F292C43D6B700A3B773 /* ArrayExtension.swift */; };
 		51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F312C43DAB000A3B773 /* CircleIndicator.swift */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
+		51AE7BEB2C4A1AC900EADC17 /* InteractionSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE7BEA2C4A1AC800EADC17 /* InteractionSubscription.swift */; };
+		51AE7BED2C4A2C5C00EADC17 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE7BEC2C4A2C5C00EADC17 /* MapHelper.swift */; };
 		51CDDC252C4919C0005FFFCC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDDC242C4919C0005FFFCC /* UIViewExtension.swift */; };
 		51CDDC272C491BF2005FFFCC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDDC262C491BF2005FFFCC /* BaseViewController.swift */; };
 		D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */; };
@@ -86,6 +88,8 @@
 		51179F292C43D6B700A3B773 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		51179F312C43DAB000A3B773 /* CircleIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIndicator.swift; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		51AE7BEA2C4A1AC800EADC17 /* InteractionSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionSubscription.swift; sourceTree = "<group>"; };
+		51AE7BEC2C4A2C5C00EADC17 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
 		51CDDC242C4919C0005FFFCC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		51CDDC262C491BF2005FFFCC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModel.swift; sourceTree = "<group>"; };
@@ -244,11 +248,11 @@
 			isa = PBXGroup;
 			children = (
 				51179F282C43D6A700A3B773 /* Extensions */,
+				D2AA5ABF270FF2BC00D9E059 /* Helper */,
 				D2AA5ACA27103A7B00D9E059 /* Models */,
 				D2AA5AD32710499E00D9E059 /* Views */,
 				D29EF552274B996C009AFA0D /* ViewModel */,
 				51179F232C43BCB100A3B773 /* ViewControllers */,
-				D2AA5ABF270FF2BC00D9E059 /* Helper */,
 				D2AA5A8F270FF26B00D9E059 /* AppDelegate.swift */,
 				D2AA5A91270FF26B00D9E059 /* SceneDelegate.swift */,
 				D2AA5A95270FF26B00D9E059 /* Main.storyboard */,
@@ -280,9 +284,11 @@
 		D2AA5ABF270FF2BC00D9E059 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				51AE7BEA2C4A1AC800EADC17 /* InteractionSubscription.swift */,
 				D2AA5AC0270FF2DD00D9E059 /* ApiLoader.swift */,
 				D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */,
 				51179F262C43D16600A3B773 /* RandomUserApi.swift */,
+				51AE7BEC2C4A2C5C00EADC17 /* MapHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -468,9 +474,11 @@
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */,
 				5102D8A32C43EF410016E5B1 /* RandmoUserList.swift in Sources */,
+				51AE7BED2C4A2C5C00EADC17 /* MapHelper.swift in Sources */,
 				51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */,
 				D2AA5AD6271049BE00D9E059 /* UserCell.swift in Sources */,
 				510AADC42C44E77F00DACF34 /* RandomUserListView.swift in Sources */,
+				51AE7BEB2C4A1AC900EADC17 /* InteractionSubscription.swift in Sources */,
 				5102D8A12C43EF2D0016E5B1 /* UserInfo.swift in Sources */,
 				51179F272C43D16600A3B773 /* RandomUserApi.swift in Sources */,
 			);
