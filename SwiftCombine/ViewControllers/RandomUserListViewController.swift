@@ -35,6 +35,7 @@ class RandomUserListViewController: BaseViewController {
         setDetailView()
         bind()
         loadData()
+        print(456)
     }
 
     override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
