@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CircleIndicator: View {
-    var animation:Animation = .linear(duration: 1)
+    var animation: Animation = .linear(duration: 1)
 
-    //MARK: - Private Properties
+    // MARK: - Private Properties
+
     private let lineWidth = 5.0
-    
     @State private var startAngle = 0.0
     @State private var endAngle = 0.25
-
     @State private var isSpinning: Bool = false
     @State private var degreesRotating = 0.0
 
@@ -32,12 +31,12 @@ struct CircleIndicator: View {
         }
         .background(Color.clear)
         .rotationEffect(.degrees(degreesRotating))
-            .onAppear {
-                withAnimation(animation
-                    .speed(1).repeatForever(autoreverses: false)) {
-                        degreesRotating = 360.0
-                    }
+        .onAppear {
+            withAnimation(animation
+                .speed(1).repeatForever(autoreverses: false))
+            {
+                degreesRotating = 360.0
             }
+        }
     }
 }
-

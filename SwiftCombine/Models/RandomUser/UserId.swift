@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct UserId:Codable {
-    let name:String
+// MARK: - UserId
+
+struct UserId: Codable, Hashable {
+    let name: String?
 }
 
-extension UserId: Hashable, Equatable {
-    static func == (lhs: UserId, rhs: UserId) -> Bool {
-        return lhs.name == rhs.name
+extension UserId {
+    enum CodingKeys: String, CodingKey {
+        case name
     }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
     }
 }
+

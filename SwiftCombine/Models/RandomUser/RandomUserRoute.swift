@@ -7,48 +7,49 @@
 
 import UIKit
 
+// MARK: - RandomUserRoute
+
 enum RandomUserRoute {
     case randomUser
-    case randomUserList(page:Int, result:Int=10)
+    case randomUserList(page: Int, result: Int = 10)
 }
+
+// MARK: APIProtocol
 
 extension RandomUserRoute: APIProtocol {
     var domain: String {
         return "https://randomuser.me"
     }
-    
+
     var url: URL {
-        guard let url = URL(string: domain+path) else {
+        guard let url = URL(string: domain + path) else {
             fatalError("url could not be configured.")
         }
         return url
     }
-    
+
     var path: String {
-        switch self {
-        case .randomUser:
-            return "/api/"
-            
-        case .randomUserList:
-            return "/api/"
-        }
+        return "/api"
     }
-    
+
     var httpMethod: HTTPMethod {
         return .get
     }
-    
+
     var task: HTTPTask {
+        return .requestUrlParameters
+    }
+
+    var parameters: [String : Any]? {
         switch self {
         case .randomUser:
-            return .requestUrlParameters(parameters: nil)
-        
-        case .randomUserList(let page, let results):
-            return .requestUrlParameters(parameters: ["page":page, "results":results])
+            return nil
+        case let .randomUserList(page, results):
+            return ["page": page, "results": results]
         }
     }
-    
-    var commonParameter: [String : Any]? {
+
+    var additionalHeaders: HTTPHeaders? {
         return nil
     }
 }

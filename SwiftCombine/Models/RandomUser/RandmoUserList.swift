@@ -7,19 +7,23 @@
 
 import Foundation
 
-struct RandmoUserList:Codable {
-    let results:[RandomUser]
-    let info:UserInfo
+// MARK: - RandmoUserList
+
+struct RandmoUserList: Codable, Hashable {
+    let results: [RandomUser]?
+    let info: UserInfo?
 }
 
-extension RandmoUserList: Hashable, Equatable {
-    static func == (lhs: RandmoUserList, rhs: RandmoUserList) -> Bool {
-        return lhs.results == rhs.results &&
-        lhs.info == rhs.info
+extension RandmoUserList {
+    enum CodingKeys: String, CodingKey {
+        case results
+        case info
     }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(results)
-        hasher.combine(info)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        results = try container.decodeIfPresent([RandomUser].self, forKey: .results)
+        info = try container.decodeIfPresent(UserInfo.self, forKey: .info)
     }
 }
+
