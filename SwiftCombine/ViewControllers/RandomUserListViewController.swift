@@ -14,7 +14,6 @@ import UIKit
 class RandomUserListViewController: BaseViewController {
     // MARK: - Private Properties
 
-
     private let collection = UIView()
 
     private let contentView = RandomUserListView()
@@ -63,8 +62,19 @@ private extension RandomUserListViewController {
         setIndicator()
         contentView.tableView.delegate = self
         contentView.refreshControl.addTarget(self, action: #selector(refreshAction(sender:)), for: .valueChanged)
+        
+        setMenuButton()
     }
 
+    func setMenuButton() {
+        let button = UIButton(type: .custom)
+        let heartImage = UIImage(systemName: "heart.fill")
+        button.setImage(heartImage, for: .normal)
+        button.tintColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+        button.addTarget(self, action: #selector(sideMenuAction(sender:)), for: .touchUpInside)
+    }
+    
     func setDetailView() {
         detailView = UserDetailView()
         guard let detailView = detailView else { return }
@@ -112,9 +122,22 @@ private extension RandomUserListViewController {
         viewModel.tableViewDiffableDataSource?.apply(snapshot, animatingDifferences: false)
     }
 
+    //MARK: - @objc func
+    
     @objc func refreshAction(sender: UIRefreshControl) {
         sender.beginRefreshing()
         viewModel.input.refteshData.send(())
+    }
+    
+    @objc func sideMenuAction(sender: UIButton) {
+        //let sideMenuVC = RandomUserSideMenuViewController()
+        
+        performSegue(withIdentifier: "presentSideMenu", sender: nil)
+        
+//        addChild(sideMenuVC)
+//        sideMenuVC.view.frame = view.bounds
+//        view.addSubview(sideMenuVC.view)
+//        didMove(toParent: self)
     }
 }
 

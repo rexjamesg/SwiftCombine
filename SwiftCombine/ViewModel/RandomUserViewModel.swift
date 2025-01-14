@@ -30,6 +30,7 @@ class RandomUserViewModel {
     }
 }
 
+
 private extension RandomUserViewModel {
     func bind() {
         input.load.flatMap { [weak self] page -> SingleResult<[RandomUser]> in

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ljp-Ec-z8E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ljp-Ec-z8E">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,10 +20,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y6C-gn-r5G"/>
+                    <connections>
+                        <segue destination="THr-qT-LIu" kind="presentation" identifier="presentSideMenu" animates="NO" modalPresentationStyle="overFullScreen" id="PKr-xs-wva"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-49.295774647887328"/>
+        </scene>
+        <!--Random User Side Menu View Controller-->
+        <scene sceneID="qQG-5A-GRs">
+            <objects>
+                <viewController id="THr-qT-LIu" customClass="RandomUserSideMenuViewController" customModule="SwiftCombine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qq4-Qr-vDT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HBW-0h-RZd"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZuS-94-Sur"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPT-vN-ley" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZTX-Uv-kIl">
@@ -41,7 +60,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebz-0O-OqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-49.295774647887328"/>
+            <point key="canvasLocation" x="131" y="-63"/>
         </scene>
     </scenes>
     <resources>
