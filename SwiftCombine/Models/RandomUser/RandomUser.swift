@@ -10,6 +10,7 @@ import UIKit
 // MARK: - RandomUser
 
 struct RandomUser: Codable, Hashable {
+    let itemId = UUID()
     let gender: String?
     let name: UserName?
     let location: UserLocation?
@@ -22,38 +23,56 @@ struct RandomUser: Codable, Hashable {
     let id: UserId?
     let picture: UserPicture?
     let nat: String?
+    
+    func getThumbnail() -> String? {
+        guard let image = picture?.thumbnail else { return nil }
+        return image
+    }
+    
+    func getFullName() -> String {
+        var fullName = ""
+        if let first = name?.first {
+            fullName += first
+        }
+        
+        if let last = name?.last {
+            fullName += " "+last
+        }
+        
+        return fullName
+    }
 }
 
-//extension RandomUser {
-//    enum CodingKeys: String, CodingKey {
-//        case gender
-//        case name
-//        case location
-//        case email
-//        case login
-//        case dob
-//        case registered
-//        case phone
-//        case cell
-//        case id
-//        case picture
-//        case nat
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        gender = try container.decodeIfPresent(String.self, forKey: .gender)
-//        name = try container.decodeIfPresent(UserName.self, forKey: .name)
-//        location = try container.decodeIfPresent(UserLocation.self, forKey: .location)
-//        email = try container.decodeIfPresent(String.self, forKey: .email)
-//        login = try container.decodeIfPresent(UserLoginData.self, forKey: .login)
-//        dob = try container.decodeIfPresent(Dob.self, forKey: .dob)
-//        registered = try container.decodeIfPresent(Registered.self, forKey: .registered)
-//        phone = try container.decodeIfPresent(String.self, forKey: .phone)
-//        cell = try container.decodeIfPresent(String.self, forKey: .cell)
-//        id = try container.decodeIfPresent(UserId.self, forKey: .id)
-//        picture = try container.decodeIfPresent(UserPicture.self, forKey: .picture)
-//        nat = try container.decodeIfPresent(String.self, forKey: .nat)
-//    }
-//}
+extension RandomUser {
+    enum CodingKeys: String, CodingKey {
+        case gender
+        case name
+        case location
+        case email
+        case login
+        case dob
+        case registered
+        case phone
+        case cell
+        case id
+        case picture
+        case nat
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        gender = try container.decodeIfPresent(String.self, forKey: .gender)
+        name = try container.decodeIfPresent(UserName.self, forKey: .name)
+        location = try container.decodeIfPresent(UserLocation.self, forKey: .location)
+        email = try container.decodeIfPresent(String.self, forKey: .email)
+        login = try container.decodeIfPresent(UserLoginData.self, forKey: .login)
+        dob = try container.decodeIfPresent(Dob.self, forKey: .dob)
+        registered = try container.decodeIfPresent(Registered.self, forKey: .registered)
+        phone = try container.decodeIfPresent(String.self, forKey: .phone)
+        cell = try container.decodeIfPresent(String.self, forKey: .cell)
+        id = try container.decodeIfPresent(UserId.self, forKey: .id)
+        picture = try container.decodeIfPresent(UserPicture.self, forKey: .picture)
+        nat = try container.decodeIfPresent(String.self, forKey: .nat)
+    }
+}
 

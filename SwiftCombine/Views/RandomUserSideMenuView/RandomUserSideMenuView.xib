@@ -10,9 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RandomUserSideMenuView" customModule="SwiftCombine" customModuleProvider="target">
             <connections>
+                <outlet property="baseCoverView" destination="aFv-bG-k7l" id="5fF-Pu-FVz"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="IBa-CZ-N5O"/>
                 <outlet property="menuBaseView" destination="uRL-3A-TRW" id="n1T-oc-tpq"/>
-                <outlet property="sideMenuHideConstraint" destination="JEz-DO-l6s" id="jpL-ja-pOF"/>
                 <outlet property="sideMenuTrailingConstraint" destination="r1R-hL-0kU" id="cv9-D6-j63"/>
                 <outlet property="tableView" destination="C6J-qq-Ckz" id="KZk-nD-GrT"/>
             </connections>
@@ -27,19 +27,19 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRL-3A-TRW" userLabel="Menu Base View">
-                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="852"/>
+                    <rect key="frame" x="-314.33333333333331" y="0.0" width="314.33333333333331" height="852"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="C6J-qq-Ckz">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="852"/>
+                            <rect key="frame" x="20" y="20" width="274.33333333333331" height="812"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="C6J-qq-Ckz" secondAttribute="trailing" id="2fl-kr-dGP"/>
-                        <constraint firstItem="C6J-qq-Ckz" firstAttribute="leading" secondItem="uRL-3A-TRW" secondAttribute="leading" id="A56-dL-DJ9"/>
-                        <constraint firstItem="C6J-qq-Ckz" firstAttribute="top" secondItem="uRL-3A-TRW" secondAttribute="top" id="VYU-gD-aKs"/>
-                        <constraint firstAttribute="bottom" secondItem="C6J-qq-Ckz" secondAttribute="bottom" id="yNx-Fd-HA9"/>
+                        <constraint firstAttribute="trailing" secondItem="C6J-qq-Ckz" secondAttribute="trailing" constant="20" id="2fl-kr-dGP"/>
+                        <constraint firstItem="C6J-qq-Ckz" firstAttribute="leading" secondItem="uRL-3A-TRW" secondAttribute="leading" constant="20" id="A56-dL-DJ9"/>
+                        <constraint firstItem="C6J-qq-Ckz" firstAttribute="top" secondItem="uRL-3A-TRW" secondAttribute="top" constant="20" id="VYU-gD-aKs"/>
+                        <constraint firstAttribute="bottom" secondItem="C6J-qq-Ckz" secondAttribute="bottom" constant="20" id="yNx-Fd-HA9"/>
                     </constraints>
                 </view>
             </subviews>
@@ -47,13 +47,12 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="uRL-3A-TRW" secondAttribute="bottom" id="2dB-4h-TOX"/>
                 <constraint firstItem="aFv-bG-k7l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BoE-a3-juU"/>
-                <constraint firstAttribute="trailing" secondItem="uRL-3A-TRW" secondAttribute="trailing" constant="393" id="JEz-DO-l6s"/>
+                <constraint firstItem="uRL-3A-TRW" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="MiZ-4W-tCn"/>
                 <constraint firstItem="uRL-3A-TRW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xyc-X7-9gY"/>
                 <constraint firstAttribute="bottom" secondItem="aFv-bG-k7l" secondAttribute="bottom" id="bcc-Ym-SbL"/>
                 <constraint firstItem="aFv-bG-k7l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mes-nm-5XV"/>
-                <constraint firstAttribute="trailing" secondItem="uRL-3A-TRW" secondAttribute="trailing" priority="750" constant="79" id="r1R-hL-0kU"/>
+                <constraint firstAttribute="trailing" secondItem="uRL-3A-TRW" secondAttribute="trailing" priority="750" constant="393" id="r1R-hL-0kU"/>
                 <constraint firstAttribute="trailing" secondItem="aFv-bG-k7l" secondAttribute="trailing" id="seA-cg-cOq"/>
-                <constraint firstItem="uRL-3A-TRW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zPr-wu-jAW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="129.00763358778624" y="0.0"/>

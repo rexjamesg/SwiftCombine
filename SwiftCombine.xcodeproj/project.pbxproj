@@ -22,10 +22,32 @@
 		5102D8A32C43EF410016E5B1 /* RandmoUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5102D8A22C43EF410016E5B1 /* RandmoUserList.swift */; };
 		510AADC42C44E77F00DACF34 /* RandomUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510AADC32C44E77F00DACF34 /* RandomUserListView.swift */; };
 		510AADC62C44E78800DACF34 /* RandomUserListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510AADC52C44E78800DACF34 /* RandomUserListView.xib */; };
+		5111BB172D53387100041296 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111BB162D53387100041296 /* ChatRoomViewController.swift */; };
+		5111BB1A2D5338BB00041296 /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111BB192D5338BB00041296 /* ChatRoomView.swift */; };
+		5111BB1C2D533A8300041296 /* ChatRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111BB1B2D533A8300041296 /* ChatRoomView.xib */; };
+		5111BB1F2D53438300041296 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111BB1E2D53438300041296 /* ChatRoomViewModel.swift */; };
 		51179F252C43CF1700A3B773 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F242C43CF1700A3B773 /* AppError.swift */; };
 		51179F272C43D16600A3B773 /* RandomUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F262C43D16600A3B773 /* RandomUserApi.swift */; };
 		51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F292C43D6B700A3B773 /* ArrayExtension.swift */; };
 		51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F312C43DAB000A3B773 /* CircleIndicator.swift */; };
+		5131BE062D50980F00B60B3F /* RandomUserSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */; };
+		5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE082D50AEB100B60B3F /* SideMenuModel.swift */; };
+		5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */; };
+		5135CF792D5F19520062E2C0 /* BezierCurvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */; };
+		5135CF7B2D5F19590062E2C0 /* BezierCurvesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */; };
+		513AC3012D62D668006F6EF8 /* ChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3002D62D668006F6EF8 /* ChatItem.swift */; };
+		513AC3032D62D6DD006F6EF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3022D62D6DD006F6EF8 /* DateExtension.swift */; };
+		513AC3062D631590006F6EF8 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3052D631590006F6EF8 /* ToDoListView.swift */; };
+		513AC3082D6315C0006F6EF8 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3072D6315C0006F6EF8 /* TodoItem.swift */; };
+		513AC30A2D6315EA006F6EF8 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3092D6315EA006F6EF8 /* TodoViewModel.swift */; };
+		513AC30C2D631DC1006F6EF8 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC30B2D631DC1006F6EF8 /* ToDoListViewController.swift */; };
+		513AC30E2D63433B006F6EF8 /* SwiftUIRandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC30D2D63433B006F6EF8 /* SwiftUIRandomUserViewModel.swift */; };
+		513AC3102D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC30F2D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift */; };
+		513AC3122D6346B0006F6EF8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3112D6346B0006F6EF8 /* ColorExtension.swift */; };
+		513AC3142D6346DA006F6EF8 /* RandomUserSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3132D6346DA006F6EF8 /* RandomUserSwiftUIView.swift */; };
+		513AC3172D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */; };
+		513AC3192D76A1B5006F6EF8 /* CellModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3182D76A1B5006F6EF8 /* CellModifier.swift */; };
+		513AC31B2D76A1DE006F6EF8 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC31A2D76A1DE006F6EF8 /* CustomNavigationView.swift */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
 		5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */; };
 		5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */; };
@@ -86,10 +108,32 @@
 		5102D8A22C43EF410016E5B1 /* RandmoUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandmoUserList.swift; sourceTree = "<group>"; };
 		510AADC32C44E77F00DACF34 /* RandomUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserListView.swift; sourceTree = "<group>"; };
 		510AADC52C44E78800DACF34 /* RandomUserListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserListView.xib; sourceTree = "<group>"; };
+		5111BB162D53387100041296 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		5111BB192D5338BB00041296 /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+		5111BB1B2D533A8300041296 /* ChatRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomView.xib; sourceTree = "<group>"; };
+		5111BB1E2D53438300041296 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		51179F242C43CF1700A3B773 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		51179F262C43D16600A3B773 /* RandomUserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserApi.swift; sourceTree = "<group>"; };
 		51179F292C43D6B700A3B773 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		51179F312C43DAB000A3B773 /* CircleIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIndicator.swift; sourceTree = "<group>"; };
+		5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuViewModel.swift; sourceTree = "<group>"; };
+		5131BE082D50AEB100B60B3F /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
+		5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesViewController.swift; sourceTree = "<group>"; };
+		5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesView.swift; sourceTree = "<group>"; };
+		5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BezierCurvesView.xib; sourceTree = "<group>"; };
+		513AC3002D62D668006F6EF8 /* ChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItem.swift; sourceTree = "<group>"; };
+		513AC3022D62D6DD006F6EF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		513AC3052D631590006F6EF8 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
+		513AC3072D6315C0006F6EF8 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		513AC3092D6315EA006F6EF8 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		513AC30B2D631DC1006F6EF8 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		513AC30D2D63433B006F6EF8 /* SwiftUIRandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIRandomUserViewModel.swift; sourceTree = "<group>"; };
+		513AC30F2D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSwiftUIVersionViewController.swift; sourceTree = "<group>"; };
+		513AC3112D6346B0006F6EF8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		513AC3132D6346DA006F6EF8 /* RandomUserSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSwiftUIView.swift; sourceTree = "<group>"; };
+		513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSwiftUICellView.swift; sourceTree = "<group>"; };
+		513AC3182D76A1B5006F6EF8 /* CellModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModifier.swift; sourceTree = "<group>"; };
+		513AC31A2D76A1DE006F6EF8 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuView.swift; sourceTree = "<group>"; };
 		5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserSideMenuView.xib; sourceTree = "<group>"; };
@@ -178,12 +222,33 @@
 			path = RandomUserListView;
 			sourceTree = "<group>";
 		};
+		5111BB182D53389700041296 /* ChatRoomView */ = {
+			isa = PBXGroup;
+			children = (
+				5111BB192D5338BB00041296 /* ChatRoomView.swift */,
+				5111BB1B2D533A8300041296 /* ChatRoomView.xib */,
+			);
+			path = ChatRoomView;
+			sourceTree = "<group>";
+		};
+		5111BB1D2D53437000041296 /* ChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				5111BB1E2D53438300041296 /* ChatRoomViewModel.swift */,
+			);
+			path = ChatRoom;
+			sourceTree = "<group>";
+		};
 		51179F232C43BCB100A3B773 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				51CDDC262C491BF2005FFFCC /* BaseViewController.swift */,
 				D2AA5A93270FF26B00D9E059 /* RandomUserListViewController.swift */,
 				5147B42D2D361945007A9C82 /* RandomUserSideMenuViewController.swift */,
+				5111BB162D53387100041296 /* ChatRoomViewController.swift */,
+				5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */,
+				513AC30B2D631DC1006F6EF8 /* ToDoListViewController.swift */,
+				513AC30F2D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +258,8 @@
 			children = (
 				51179F292C43D6B700A3B773 /* ArrayExtension.swift */,
 				51CDDC242C4919C0005FFFCC /* UIViewExtension.swift */,
+				513AC3022D62D6DD006F6EF8 /* DateExtension.swift */,
+				513AC3112D6346B0006F6EF8 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,9 +276,47 @@
 		51179F302C43DAA600A3B773 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				513AC3152D65C8B3006F6EF8 /* RandomUser */,
+				513AC3042D63157C006F6EF8 /* ToDoListView */,
 				51179F312C43DAB000A3B773 /* CircleIndicator.swift */,
+				513AC3132D6346DA006F6EF8 /* RandomUserSwiftUIView.swift */,
+				513AC3182D76A1B5006F6EF8 /* CellModifier.swift */,
+				513AC31A2D76A1DE006F6EF8 /* CustomNavigationView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		5131BE072D50AE9B00B60B3F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5131BE082D50AEB100B60B3F /* SideMenuModel.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		5135CF772D5F19390062E2C0 /* BezierCurvesView */ = {
+			isa = PBXGroup;
+			children = (
+				5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */,
+				5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */,
+			);
+			path = BezierCurvesView;
+			sourceTree = "<group>";
+		};
+		513AC3042D63157C006F6EF8 /* ToDoListView */ = {
+			isa = PBXGroup;
+			children = (
+				513AC3052D631590006F6EF8 /* ToDoListView.swift */,
+			);
+			path = ToDoListView;
+			sourceTree = "<group>";
+		};
+		513AC3152D65C8B3006F6EF8 /* RandomUser */ = {
+			isa = PBXGroup;
+			children = (
+				513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */,
+			);
+			path = RandomUser;
 			sourceTree = "<group>";
 		};
 		513F8B012C43E69C00AB14D7 /* UserDetailView */ = {
@@ -235,7 +340,11 @@
 		D29EF552274B996C009AFA0D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5111BB1D2D53437000041296 /* ChatRoom */,
 				D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */,
+				5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */,
+				513AC3092D6315EA006F6EF8 /* TodoViewModel.swift */,
+				513AC30D2D63433B006F6EF8 /* SwiftUIRandomUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -312,10 +421,13 @@
 		D2AA5ACA27103A7B00D9E059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5131BE072D50AE9B00B60B3F /* SideMenu */,
 				5102D8A42C43EF520016E5B1 /* RandomUser */,
 				D2AA5ACF2710400900D9E059 /* URLTaskDefinition.swift */,
 				D29EF555274B9E8D009AFA0D /* Repositery.swift */,
 				51179F242C43CF1700A3B773 /* AppError.swift */,
+				513AC3002D62D668006F6EF8 /* ChatItem.swift */,
+				513AC3072D6315C0006F6EF8 /* TodoItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +435,8 @@
 		D2AA5AD32710499E00D9E059 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5135CF772D5F19390062E2C0 /* BezierCurvesView */,
+				5111BB182D53389700041296 /* ChatRoomView */,
 				5147B4202D360D70007A9C82 /* RandomUserSideMenuView */,
 				510AADC22C44E76C00DACF34 /* RandomUserListView */,
 				513F8B012C43E69C00AB14D7 /* UserDetailView */,
@@ -436,8 +550,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AA5AD7271049BE00D9E059 /* UserCell.xib in Resources */,
+				5111BB1C2D533A8300041296 /* ChatRoomView.xib in Resources */,
 				5102D88B2C43E6DE0016E5B1 /* UserDetailView.xib in Resources */,
 				5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */,
+				5135CF7B2D5F19590062E2C0 /* BezierCurvesView.xib in Resources */,
 				510AADC62C44E78800DACF34 /* RandomUserListView.xib in Resources */,
 				D2AA5A9C270FF26C00D9E059 /* LaunchScreen.storyboard in Resources */,
 				D2AA5A99270FF26C00D9E059 /* Assets.xcassets in Resources */,
@@ -466,9 +582,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513AC3012D62D668006F6EF8 /* ChatItem.swift in Sources */,
 				51CDDC252C4919C0005FFFCC /* UIViewExtension.swift in Sources */,
 				D2AA5ACE27103BFE00D9E059 /* RandomUser.swift in Sources */,
+				5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */,
+				513AC3192D76A1B5006F6EF8 /* CellModifier.swift in Sources */,
 				5102D89B2C43EEDB0016E5B1 /* Registered.swift in Sources */,
+				5111BB1F2D53438300041296 /* ChatRoomViewModel.swift in Sources */,
+				513AC3122D6346B0006F6EF8 /* ColorExtension.swift in Sources */,
+				513AC3082D6315C0006F6EF8 /* TodoItem.swift in Sources */,
 				D29EF556274B9E8D009AFA0D /* Repositery.swift in Sources */,
 				51CDDC272C491BF2005FFFCC /* BaseViewController.swift in Sources */,
 				D2A09A072715321800C9AD2A /* ImageDownloadHandler.swift in Sources */,
@@ -477,8 +599,11 @@
 				5102D8972C43EEB70016E5B1 /* UserLoginData.swift in Sources */,
 				5102D88F2C43EE450016E5B1 /* UserLocation.swift in Sources */,
 				D2AA5A94270FF26B00D9E059 /* RandomUserListViewController.swift in Sources */,
+				513AC3142D6346DA006F6EF8 /* RandomUserSwiftUIView.swift in Sources */,
 				5102D88D2C43EE230016E5B1 /* UserName.swift in Sources */,
 				5102D8932C43EE850016E5B1 /* UserCoordinates.swift in Sources */,
+				513AC3172D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift in Sources */,
+				513AC3102D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift in Sources */,
 				51179F252C43CF1700A3B773 /* AppError.swift in Sources */,
 				D2AA5AD02710400900D9E059 /* URLTaskDefinition.swift in Sources */,
 				5102D8912C43EE6C0016E5B1 /* UserStreet.swift in Sources */,
@@ -488,17 +613,28 @@
 				5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */,
 				D2AA5A90270FF26B00D9E059 /* AppDelegate.swift in Sources */,
 				51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */,
+				5131BE062D50980F00B60B3F /* RandomUserSideMenuViewModel.swift in Sources */,
+				5111BB1A2D5338BB00041296 /* ChatRoomView.swift in Sources */,
+				5111BB172D53387100041296 /* ChatRoomViewController.swift in Sources */,
 				D2AA5AD2271041FB00D9E059 /* RandomUserRoute.swift in Sources */,
 				D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */,
+				513AC30A2D6315EA006F6EF8 /* TodoViewModel.swift in Sources */,
+				5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */,
+				513AC3032D62D6DD006F6EF8 /* DateExtension.swift in Sources */,
 				5102D89D2C43EEF80016E5B1 /* UserId.swift in Sources */,
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */,
+				513AC30E2D63433B006F6EF8 /* SwiftUIRandomUserViewModel.swift in Sources */,
+				5135CF792D5F19520062E2C0 /* BezierCurvesView.swift in Sources */,
 				5102D8A32C43EF410016E5B1 /* RandmoUserList.swift in Sources */,
 				51AE7BED2C4A2C5C00EADC17 /* MapHelper.swift in Sources */,
+				513AC30C2D631DC1006F6EF8 /* ToDoListViewController.swift in Sources */,
 				51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */,
+				513AC3062D631590006F6EF8 /* ToDoListView.swift in Sources */,
 				D2AA5AD6271049BE00D9E059 /* UserCell.swift in Sources */,
 				510AADC42C44E77F00DACF34 /* RandomUserListView.swift in Sources */,
 				51AE7BEB2C4A1AC900EADC17 /* InteractionSubscription.swift in Sources */,
+				513AC31B2D76A1DE006F6EF8 /* CustomNavigationView.swift in Sources */,
 				5102D8A12C43EF2D0016E5B1 /* UserInfo.swift in Sources */,
 				51179F272C43D16600A3B773 /* RandomUserApi.swift in Sources */,
 			);
@@ -679,7 +815,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EZ8T585853;
 				INFOPLIST_FILE = SwiftCombine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -699,7 +835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EZ8T585853;
 				INFOPLIST_FILE = SwiftCombine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

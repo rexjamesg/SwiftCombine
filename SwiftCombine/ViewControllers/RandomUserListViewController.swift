@@ -9,13 +9,46 @@ import Combine
 import SwiftUI
 import UIKit
 
+enum MenuItems: CaseIterable {
+    case chatRoom
+    case bezierCurves
+    case toDoListViewController
+    case randomUserSwiftUIVersion
+}
+
+extension MenuItems {
+    var identifier: String {
+        switch self {
+        case .chatRoom:
+            return "PushChatRoom"
+        case .bezierCurves:
+            return "pushBezierCurves"
+        case .toDoListViewController:
+            return "pushToDoListViewController"
+        case .randomUserSwiftUIVersion:
+            return "PushRandomUserSwiftUIVersion"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .chatRoom:
+            return "聊天室"
+        case .bezierCurves:
+            return "Bezier Curves - Ballistic"
+        case .toDoListViewController:
+            return "ToDoListViewController"
+        case .randomUserSwiftUIVersion:
+            return "RandomUserSwiftUIVersion"
+        }
+    }
+}
+
 // MARK: - RandomUserListViewController
 
 class RandomUserListViewController: BaseViewController {
+    
     // MARK: - Private Properties
-
-    private let collection = UIView()
-
     private let contentView = RandomUserListView()
     private var viewModel = RandomUserViewModel()
     private var detailView: UserDetailView?
@@ -34,12 +67,24 @@ class RandomUserListViewController: BaseViewController {
         setDetailView()
         bind()
         loadData()
-        print(456)
     }
 
     override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
         if let detailView = detailView {
             detailView.isHidden = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? RandomUserSideMenuViewController {
+            let list = MenuItems.allCases.map {
+                SideMenuModel(title: $0.title, identifier: $0.identifier)
+            }
+            vc.setMenuList(list)
+            vc.selectedMenuItem = { [weak self] item in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: item.identifier, sender: nil)
+            }
         }
     }
 }
