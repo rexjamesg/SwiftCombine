@@ -26,6 +26,8 @@
 		51179F272C43D16600A3B773 /* RandomUserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F262C43D16600A3B773 /* RandomUserApi.swift */; };
 		51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F292C43D6B700A3B773 /* ArrayExtension.swift */; };
 		51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F312C43DAB000A3B773 /* CircleIndicator.swift */; };
+		5131BE062D50980F00B60B3F /* RandomUserSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */; };
+		5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE082D50AEB100B60B3F /* SideMenuModel.swift */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
 		5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */; };
 		5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */; };
@@ -90,6 +92,8 @@
 		51179F262C43D16600A3B773 /* RandomUserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserApi.swift; sourceTree = "<group>"; };
 		51179F292C43D6B700A3B773 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		51179F312C43DAB000A3B773 /* CircleIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIndicator.swift; sourceTree = "<group>"; };
+		5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuViewModel.swift; sourceTree = "<group>"; };
+		5131BE082D50AEB100B60B3F /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuView.swift; sourceTree = "<group>"; };
 		5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserSideMenuView.xib; sourceTree = "<group>"; };
@@ -214,6 +218,14 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
+		5131BE072D50AE9B00B60B3F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5131BE082D50AEB100B60B3F /* SideMenuModel.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		513F8B012C43E69C00AB14D7 /* UserDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				D29EF553274B999E009AFA0D /* RandomUserViewModel.swift */,
+				5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -312,6 +325,7 @@
 		D2AA5ACA27103A7B00D9E059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5131BE072D50AE9B00B60B3F /* SideMenu */,
 				5102D8A42C43EF520016E5B1 /* RandomUser */,
 				D2AA5ACF2710400900D9E059 /* URLTaskDefinition.swift */,
 				D29EF555274B9E8D009AFA0D /* Repositery.swift */,
@@ -488,8 +502,10 @@
 				5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */,
 				D2AA5A90270FF26B00D9E059 /* AppDelegate.swift in Sources */,
 				51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */,
+				5131BE062D50980F00B60B3F /* RandomUserSideMenuViewModel.swift in Sources */,
 				D2AA5AD2271041FB00D9E059 /* RandomUserRoute.swift in Sources */,
 				D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */,
+				5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */,
 				5102D89D2C43EEF80016E5B1 /* UserId.swift in Sources */,
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */,

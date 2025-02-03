@@ -9,13 +9,41 @@ import Combine
 import SwiftUI
 import UIKit
 
+enum MenuItems: CaseIterable {
+    case menuA
+    case menuB
+    case menuC
+}
+
+extension MenuItems {
+    var identifier: String {
+        switch self {
+        case .menuA:
+            return "pushMenuA"
+        case .menuB:
+            return "pushMenuB"
+        case .menuC:
+            return "pushMenuC"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .menuA:
+            return "頁面A"
+        case .menuB:
+            return "頁面B"
+        case .menuC:
+            return "頁面C"
+        }
+    }
+}
+
 // MARK: - RandomUserListViewController
 
 class RandomUserListViewController: BaseViewController {
+    
     // MARK: - Private Properties
-
-    private let collection = UIView()
-
     private let contentView = RandomUserListView()
     private var viewModel = RandomUserViewModel()
     private var detailView: UserDetailView?
@@ -34,12 +62,23 @@ class RandomUserListViewController: BaseViewController {
         setDetailView()
         bind()
         loadData()
-        print(456)
     }
 
     override func touchesBegan(_: Set<UITouch>, with _: UIEvent?) {
         if let detailView = detailView {
             detailView.isHidden = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? RandomUserSideMenuViewController {
+            let list = MenuItems.allCases.map {
+                SideMenuModel(title: $0.title, identifier: $0.identifier)
+            }
+            vc.setMenuList(list)
+            vc.selectedMenuItem = { item in
+                print("item", item)
+            }
         }
     }
 }
