@@ -22,30 +22,14 @@
                     <navigationItem key="navigationItem" id="Y6C-gn-r5G"/>
                     <connections>
                         <segue destination="THr-qT-LIu" kind="presentation" identifier="presentSideMenu" animates="NO" modalPresentationStyle="overFullScreen" id="PKr-xs-wva"/>
-                        <segue destination="5OK-Rg-wx6" kind="show" identifier="pushMenuA" id="7iL-qR-Elo"/>
                         <segue destination="DyS-I5-g0m" kind="show" identifier="pushMenuB" id="WqD-55-ZtK"/>
                         <segue destination="WID-84-c1t" kind="show" identifier="pushMenuC" id="v64-wR-lGB"/>
+                        <segue destination="3GW-p5-G7r" kind="show" identifier="PushChatRoom" id="Nzj-zI-Ucv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1904.5801526717557" y="34.507042253521128"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="OZR-RW-SAL">
-            <objects>
-                <viewController id="5OK-Rg-wx6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TYF-X5-Ptk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="EYL-49-dn3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Gjj-Bb-9XN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rxU-NX-5hp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2876" y="-191"/>
         </scene>
         <!--Random User Side Menu View Controller-->
         <scene sceneID="qQG-5A-GRs">
@@ -62,6 +46,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPT-vN-ley" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1905" y="787"/>
+        </scene>
+        <!--Chat Room View Controller-->
+        <scene sceneID="hJb-5f-XEL">
+            <objects>
+                <viewController id="3GW-p5-G7r" customClass="ChatRoomViewController" customModule="SwiftCombine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0CF-hy-Gbs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rPM-NN-wZp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SRo-ba-oqy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFg-u2-3fR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865" y="-192"/>
         </scene>
         <!--Item-->
         <scene sceneID="sWO-cw-exF">

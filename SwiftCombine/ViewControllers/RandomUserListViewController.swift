@@ -19,7 +19,7 @@ extension MenuItems {
     var identifier: String {
         switch self {
         case .menuA:
-            return "pushMenuA"
+            return "PushChatRoom"
         case .menuB:
             return "pushMenuB"
         case .menuC:
@@ -30,7 +30,7 @@ extension MenuItems {
     var title: String {
         switch self {
         case .menuA:
-            return "頁面A"
+            return "聊天室"
         case .menuB:
             return "頁面B"
         case .menuC:
@@ -76,8 +76,9 @@ class RandomUserListViewController: BaseViewController {
                 SideMenuModel(title: $0.title, identifier: $0.identifier)
             }
             vc.setMenuList(list)
-            vc.selectedMenuItem = { item in
-                print("item", item)
+            vc.selectedMenuItem = { [weak self] item in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: item.identifier, sender: nil)
             }
         }
     }
