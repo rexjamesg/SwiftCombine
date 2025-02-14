@@ -21,7 +21,7 @@ extension MenuItems {
         case .menuA:
             return "PushChatRoom"
         case .menuB:
-            return "pushMenuB"
+            return "pushBezierCurves"
         case .menuC:
             return "pushMenuC"
         }
@@ -32,7 +32,7 @@ extension MenuItems {
         case .menuA:
             return "聊天室"
         case .menuB:
-            return "頁面B"
+            return "Bezier Curves - Ballistic"
         case .menuC:
             return "頁面C"
         }

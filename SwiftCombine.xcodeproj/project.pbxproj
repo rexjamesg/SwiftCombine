@@ -32,6 +32,9 @@
 		51179F322C43DAB000A3B773 /* CircleIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51179F312C43DAB000A3B773 /* CircleIndicator.swift */; };
 		5131BE062D50980F00B60B3F /* RandomUserSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */; };
 		5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5131BE082D50AEB100B60B3F /* SideMenuModel.swift */; };
+		5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */; };
+		5135CF792D5F19520062E2C0 /* BezierCurvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */; };
+		5135CF7B2D5F19590062E2C0 /* BezierCurvesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
 		5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */; };
 		5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */; };
@@ -102,6 +105,9 @@
 		51179F312C43DAB000A3B773 /* CircleIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleIndicator.swift; sourceTree = "<group>"; };
 		5131BE052D50980F00B60B3F /* RandomUserSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuViewModel.swift; sourceTree = "<group>"; };
 		5131BE082D50AEB100B60B3F /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
+		5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesViewController.swift; sourceTree = "<group>"; };
+		5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesView.swift; sourceTree = "<group>"; };
+		5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BezierCurvesView.xib; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuView.swift; sourceTree = "<group>"; };
 		5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserSideMenuView.xib; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				D2AA5A93270FF26B00D9E059 /* RandomUserListViewController.swift */,
 				5147B42D2D361945007A9C82 /* RandomUserSideMenuViewController.swift */,
 				5111BB162D53387100041296 /* ChatRoomViewController.swift */,
+				5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +257,15 @@
 				5131BE082D50AEB100B60B3F /* SideMenuModel.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		5135CF772D5F19390062E2C0 /* BezierCurvesView */ = {
+			isa = PBXGroup;
+			children = (
+				5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */,
+				5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */,
+			);
+			path = BezierCurvesView;
 			sourceTree = "<group>";
 		};
 		513F8B012C43E69C00AB14D7 /* UserDetailView */ = {
@@ -364,6 +380,7 @@
 		D2AA5AD32710499E00D9E059 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5135CF772D5F19390062E2C0 /* BezierCurvesView */,
 				5111BB182D53389700041296 /* ChatRoomView */,
 				5147B4202D360D70007A9C82 /* RandomUserSideMenuView */,
 				510AADC22C44E76C00DACF34 /* RandomUserListView */,
@@ -481,6 +498,7 @@
 				5111BB1C2D533A8300041296 /* ChatRoomView.xib in Resources */,
 				5102D88B2C43E6DE0016E5B1 /* UserDetailView.xib in Resources */,
 				5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */,
+				5135CF7B2D5F19590062E2C0 /* BezierCurvesView.xib in Resources */,
 				510AADC62C44E78800DACF34 /* RandomUserListView.xib in Resources */,
 				D2AA5A9C270FF26C00D9E059 /* LaunchScreen.storyboard in Resources */,
 				D2AA5A99270FF26C00D9E059 /* Assets.xcassets in Resources */,
@@ -511,6 +529,7 @@
 			files = (
 				51CDDC252C4919C0005FFFCC /* UIViewExtension.swift in Sources */,
 				D2AA5ACE27103BFE00D9E059 /* RandomUser.swift in Sources */,
+				5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */,
 				5102D89B2C43EEDB0016E5B1 /* Registered.swift in Sources */,
 				5111BB1F2D53438300041296 /* ChatRoomViewModel.swift in Sources */,
 				D29EF556274B9E8D009AFA0D /* Repositery.swift in Sources */,
@@ -541,6 +560,7 @@
 				5102D89D2C43EEF80016E5B1 /* UserId.swift in Sources */,
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */,
+				5135CF792D5F19520062E2C0 /* BezierCurvesView.swift in Sources */,
 				5102D8A32C43EF410016E5B1 /* RandmoUserList.swift in Sources */,
 				51AE7BED2C4A2C5C00EADC17 /* MapHelper.swift in Sources */,
 				51179F2A2C43D6B700A3B773 /* ArrayExtension.swift in Sources */,

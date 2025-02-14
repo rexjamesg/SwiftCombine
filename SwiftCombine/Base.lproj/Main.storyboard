@@ -22,7 +22,7 @@
                     <navigationItem key="navigationItem" id="Y6C-gn-r5G"/>
                     <connections>
                         <segue destination="THr-qT-LIu" kind="presentation" identifier="presentSideMenu" animates="NO" modalPresentationStyle="overFullScreen" id="PKr-xs-wva"/>
-                        <segue destination="DyS-I5-g0m" kind="show" identifier="pushMenuB" id="WqD-55-ZtK"/>
+                        <segue destination="DyS-I5-g0m" kind="show" identifier="pushBezierCurves" id="WqD-55-ZtK"/>
                         <segue destination="WID-84-c1t" kind="show" identifier="pushMenuC" id="v64-wR-lGB"/>
                         <segue destination="3GW-p5-G7r" kind="show" identifier="PushChatRoom" id="Nzj-zI-Ucv"/>
                     </connections>
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="4410" y="-192"/>
         </scene>
-        <!--View Controller-->
+        <!--Bezier Curves View Controller-->
         <scene sceneID="DR8-dd-VZp">
             <objects>
-                <viewController id="DyS-I5-g0m" sceneMemberID="viewController">
+                <viewController id="DyS-I5-g0m" customClass="BezierCurvesViewController" customModule="SwiftCombine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Fw-P5-WbT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

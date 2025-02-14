@@ -15,6 +15,8 @@ class ChatRoomViewController: BaseViewController {
     private let viewModel = ChatRoomViewModel()
     private var subscribers = [AnyCancellable]()
     
+    var timer:Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,13 +29,16 @@ class ChatRoomViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
             self.viewModel.input.load.send(())
         }
-        timer.fire()
+        timer?.fire()
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+    }
     
 
     /*
