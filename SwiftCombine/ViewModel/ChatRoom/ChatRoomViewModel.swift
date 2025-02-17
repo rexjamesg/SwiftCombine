@@ -9,14 +9,6 @@ import Combine
 import Foundation
 import UIKit
 
-// MARK: - ChatItem
-
-struct ChatItem: Codable, Hashable {
-    let name: String
-    let content: String
-    let dateTime: Date
-}
-
 // MARK: - ChatRoomViewModel
 
 class ChatRoomViewModel {
@@ -82,19 +74,13 @@ private extension ChatRoomViewModel {
         guard !isUpdating else { return }  // ❶ 防止同時執行多個插入操作
         isUpdating = true  // ❷ 標記正在進行批量更新
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             print("self.pendingMessages count", self?.pendingMessages.count)
             guard let self = self else { return }
             // ❸ 延遲 0.5 秒執行
             //let startIndex = self.chatItems.count  // ❹ 記錄插入前的最後一個索引
             
-            self.chatItems.append(contentsOf: self.pendingMessages)  // ❺ 將待插入的訊息加入主訊息陣列
-
-//            let indexPaths = (startIndex..<self.chatItems.count).map {
-//                IndexPath(row: $0, section: 0)
-//            }  // ❻ 根據新增的訊息數量，建立要插入的 `IndexPath` 陣列
-
-            //self.tableView.insertRows(at: indexPaths, with: .automatic)  // ❼ 插入新訊息到 TableView，並使用動畫效果
+            self.chatItems.insert(contentsOf: self.pendingMessages.reversed(), at: 0) // ❺ 將待插入的訊息加入主訊息陣列
 
             self.pendingMessages.removeAll()  // ❽ 清空 `pendingMessages`，表示這批訊息已處理
             self.isUpdating = false  // ❾ 解鎖，允許下一次批量插入

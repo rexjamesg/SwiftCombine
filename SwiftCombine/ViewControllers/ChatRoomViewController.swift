@@ -58,11 +58,13 @@ private extension ChatRoomViewController {
     func bind() {
         viewModel.tableViewDiffableDataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, itemIdentifier in
             
+            let dateString = itemIdentifier.dateTime.dateString(format: "yyyy/MM/dd HH:mm:ss")
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             cell.transform = CGAffineTransform(scaleX: 1, y: -1)
             var content = cell.defaultContentConfiguration()
             content.text = itemIdentifier.name
-            content.secondaryText = itemIdentifier.content
+            content.secondaryText = "\(itemIdentifier.content + " " + dateString)"
             cell.contentConfiguration = content
             return cell
         })

@@ -10,7 +10,6 @@ import UIKit
 class BezierCurvesView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var curvesView: UIView!
-    @IBOutlet var confirmButton: UIButton!
     @IBOutlet var xValueLabel: UILabel!
     @IBOutlet var yValueLabel: UILabel!
     

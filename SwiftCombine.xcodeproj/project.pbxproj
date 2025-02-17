@@ -35,6 +35,8 @@
 		5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */; };
 		5135CF792D5F19520062E2C0 /* BezierCurvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */; };
 		5135CF7B2D5F19590062E2C0 /* BezierCurvesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */; };
+		513AC3012D62D668006F6EF8 /* ChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3002D62D668006F6EF8 /* ChatItem.swift */; };
+		513AC3032D62D6DD006F6EF8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3022D62D6DD006F6EF8 /* DateExtension.swift */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
 		5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */; };
 		5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */; };
@@ -108,6 +110,8 @@
 		5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesViewController.swift; sourceTree = "<group>"; };
 		5135CF782D5F19520062E2C0 /* BezierCurvesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurvesView.swift; sourceTree = "<group>"; };
 		5135CF7A2D5F19590062E2C0 /* BezierCurvesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BezierCurvesView.xib; sourceTree = "<group>"; };
+		513AC3002D62D668006F6EF8 /* ChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItem.swift; sourceTree = "<group>"; };
+		513AC3022D62D6DD006F6EF8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuView.swift; sourceTree = "<group>"; };
 		5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserSideMenuView.xib; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			children = (
 				51179F292C43D6B700A3B773 /* ArrayExtension.swift */,
 				51CDDC242C4919C0005FFFCC /* UIViewExtension.swift */,
+				513AC3022D62D6DD006F6EF8 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				D2AA5ACF2710400900D9E059 /* URLTaskDefinition.swift */,
 				D29EF555274B9E8D009AFA0D /* Repositery.swift */,
 				51179F242C43CF1700A3B773 /* AppError.swift */,
+				513AC3002D62D668006F6EF8 /* ChatItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513AC3012D62D668006F6EF8 /* ChatItem.swift in Sources */,
 				51CDDC252C4919C0005FFFCC /* UIViewExtension.swift in Sources */,
 				D2AA5ACE27103BFE00D9E059 /* RandomUser.swift in Sources */,
 				5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */,
@@ -557,6 +564,7 @@
 				D2AA5AD2271041FB00D9E059 /* RandomUserRoute.swift in Sources */,
 				D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */,
 				5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */,
+				513AC3032D62D6DD006F6EF8 /* DateExtension.swift in Sources */,
 				5102D89D2C43EEF80016E5B1 /* UserId.swift in Sources */,
 				D2AA5A92270FF26B00D9E059 /* SceneDelegate.swift in Sources */,
 				513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */,
