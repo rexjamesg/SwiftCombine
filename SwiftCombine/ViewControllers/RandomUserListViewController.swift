@@ -10,31 +10,36 @@ import SwiftUI
 import UIKit
 
 enum MenuItems: CaseIterable {
-    case menuA
-    case menuB
-    case menuC
+    case chatRoom
+    case bezierCurves
+    case toDoListViewController
+    case randomUserSwiftUIVersion
 }
 
 extension MenuItems {
     var identifier: String {
         switch self {
-        case .menuA:
+        case .chatRoom:
             return "PushChatRoom"
-        case .menuB:
+        case .bezierCurves:
             return "pushBezierCurves"
-        case .menuC:
-            return "pushMenuC"
+        case .toDoListViewController:
+            return "pushToDoListViewController"
+        case .randomUserSwiftUIVersion:
+            return "PushRandomUserSwiftUIVersion"
         }
     }
     
     var title: String {
         switch self {
-        case .menuA:
+        case .chatRoom:
             return "聊天室"
-        case .menuB:
+        case .bezierCurves:
             return "Bezier Curves - Ballistic"
-        case .menuC:
-            return "頁面C"
+        case .toDoListViewController:
+            return "ToDoListViewController"
+        case .randomUserSwiftUIVersion:
+            return "RandomUserSwiftUIVersion"
         }
     }
 }

@@ -112,6 +112,10 @@ private extension BezierCurvesViewController {
     }
 
     func drawCurveView(controlPoint: CGPoint) {
+        if curveView != nil {
+            curveView?.removeFromSuperview()
+        }
+        
         curveView = CurveView(frame: CGRect(x: 0, y: 0, width: contentView.curvesView.bounds.width, height: contentView.curvesView.bounds.height), controlPoint: controlPoint)
         contentView.curvesView.addSubview(curveView!)
 

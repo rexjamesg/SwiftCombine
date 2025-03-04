@@ -23,8 +23,9 @@
                     <connections>
                         <segue destination="THr-qT-LIu" kind="presentation" identifier="presentSideMenu" animates="NO" modalPresentationStyle="overFullScreen" id="PKr-xs-wva"/>
                         <segue destination="DyS-I5-g0m" kind="show" identifier="pushBezierCurves" id="WqD-55-ZtK"/>
-                        <segue destination="WID-84-c1t" kind="show" identifier="pushMenuC" id="v64-wR-lGB"/>
+                        <segue destination="WID-84-c1t" kind="show" identifier="pushToDoListViewController" id="v64-wR-lGB"/>
                         <segue destination="3GW-p5-G7r" kind="show" identifier="PushChatRoom" id="Nzj-zI-Ucv"/>
+                        <segue destination="TsZ-ga-Koy" kind="show" identifier="PushRandomUserSwiftUIVersion" id="n5A-oF-MrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="977.86259541984725" y="34.507042253521128"/>
         </scene>
-        <!--View Controller-->
+        <!--To Do List View Controller-->
         <scene sceneID="ocA-te-9al">
             <objects>
-                <viewController id="WID-84-c1t" sceneMemberID="viewController">
+                <viewController id="WID-84-c1t" customClass="ToDoListViewController" customModule="SwiftCombine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kEo-D6-CmU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +98,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hL-cz-8PG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4410" y="-192"/>
+        </scene>
+        <!--Random User SwiftUI Version View Controller-->
+        <scene sceneID="SmA-qG-ilQ">
+            <objects>
+                <viewController id="TsZ-ga-Koy" customClass="RandomUserSwiftUIVersionViewController" customModule="SwiftCombine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o9M-4E-XLw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="u1Y-v9-wsS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I2O-GO-Hzs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJs-h9-N2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5204" y="-192"/>
         </scene>
         <!--Bezier Curves View Controller-->
         <scene sceneID="DR8-dd-VZp">
