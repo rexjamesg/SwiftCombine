@@ -48,6 +48,8 @@
 		513AC3172D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */; };
 		513AC3192D76A1B5006F6EF8 /* CellModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC3182D76A1B5006F6EF8 /* CellModifier.swift */; };
 		513AC31B2D76A1DE006F6EF8 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC31A2D76A1DE006F6EF8 /* CustomNavigationView.swift */; };
+		513AC31E2D76B971006F6EF8 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC31D2D76B971006F6EF8 /* DownloadOperation.swift */; };
+		513AC3202D76BDB0006F6EF8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AC31F2D76BDB0006F6EF8 /* HomeViewController.swift */; };
 		513F8AFE2C43E68F00AB14D7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */; };
 		5147B4262D360DB6007A9C82 /* RandomUserSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */; };
 		5147B42C2D3616BC007A9C82 /* RandomUserSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */; };
@@ -134,6 +136,8 @@
 		513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSwiftUICellView.swift; sourceTree = "<group>"; };
 		513AC3182D76A1B5006F6EF8 /* CellModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModifier.swift; sourceTree = "<group>"; };
 		513AC31A2D76A1DE006F6EF8 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		513AC31D2D76B971006F6EF8 /* DownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
+		513AC31F2D76BDB0006F6EF8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		513F8AFD2C43E68F00AB14D7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		5147B4252D360DB6007A9C82 /* RandomUserSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSideMenuView.swift; sourceTree = "<group>"; };
 		5147B42B2D3616BC007A9C82 /* RandomUserSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomUserSideMenuView.xib; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				5135CF752D5EE7AF0062E2C0 /* BezierCurvesViewController.swift */,
 				513AC30B2D631DC1006F6EF8 /* ToDoListViewController.swift */,
 				513AC30F2D63468D006F6EF8 /* RandomUserSwiftUIVersionViewController.swift */,
+				513AC31F2D76BDB0006F6EF8 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -317,6 +322,14 @@
 				513AC3162D65C8D2006F6EF8 /* RandomUserSwiftUICellView.swift */,
 			);
 			path = RandomUser;
+			sourceTree = "<group>";
+		};
+		513AC31C2D76B949006F6EF8 /* OperationQueque */ = {
+			isa = PBXGroup;
+			children = (
+				513AC31D2D76B971006F6EF8 /* DownloadOperation.swift */,
+			);
+			path = OperationQueque;
 			sourceTree = "<group>";
 		};
 		513F8B012C43E69C00AB14D7 /* UserDetailView */ = {
@@ -409,6 +422,7 @@
 		D2AA5ABF270FF2BC00D9E059 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				513AC31C2D76B949006F6EF8 /* OperationQueque */,
 				51AE7BEA2C4A1AC800EADC17 /* InteractionSubscription.swift */,
 				D2AA5AC0270FF2DD00D9E059 /* ApiLoader.swift */,
 				D2A09A062715321800C9AD2A /* ImageDownloadHandler.swift */,
@@ -584,6 +598,7 @@
 			files = (
 				513AC3012D62D668006F6EF8 /* ChatItem.swift in Sources */,
 				51CDDC252C4919C0005FFFCC /* UIViewExtension.swift in Sources */,
+				513AC3202D76BDB0006F6EF8 /* HomeViewController.swift in Sources */,
 				D2AA5ACE27103BFE00D9E059 /* RandomUser.swift in Sources */,
 				5135CF762D5EE7AF0062E2C0 /* BezierCurvesViewController.swift in Sources */,
 				513AC3192D76A1B5006F6EF8 /* CellModifier.swift in Sources */,
@@ -619,6 +634,7 @@
 				D2AA5AD2271041FB00D9E059 /* RandomUserRoute.swift in Sources */,
 				D29EF554274B999E009AFA0D /* RandomUserViewModel.swift in Sources */,
 				513AC30A2D6315EA006F6EF8 /* TodoViewModel.swift in Sources */,
+				513AC31E2D76B971006F6EF8 /* DownloadOperation.swift in Sources */,
 				5131BE092D50AEB100B60B3F /* SideMenuModel.swift in Sources */,
 				513AC3032D62D6DD006F6EF8 /* DateExtension.swift in Sources */,
 				5102D89D2C43EEF80016E5B1 /* UserId.swift in Sources */,
